@@ -53,3 +53,6 @@ TagManager:
   - name: ground layer
     uniqueID: 1958227285
     locked: 0
+  - name: New Layer 5
+    uniqueID: 3978023157
+    locked: 0
