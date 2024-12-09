@@ -1,0 +1,671 @@
+Player script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public float moveSpeed;
+    public float jumpHeight;
+    public KeyCode Spacebar;
+    public KeyCode L;
+    public KeyCode R;
+
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    private bool grounded;
+
+    private Animator anim;
+
+    public KeyCode Return;
+    public Transform firepoint;
+    public GameObject bullet;
+
+    public AudioClip jump1;
+    public AudioClip jump2;
+
+
+    void Start() {
+        anim = GetComponent<Animator>();
+    }
+
+    void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
+
+    void Update() {
+
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetBool("Grounded", grounded);
+        
+        // Jump condition
+        if (Input.GetKeyDown(Spacebar) && grounded)
+        {
+            Jump();
+        }
+
+        // Move left
+        else if (Input.GetKey(L))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+            if (transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        // Move right
+        else if (Input.GetKey(R))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+            if (transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        else if (Input.GetKeyDown(Return))
+        {
+            Shoot();
+        }
+        
+        // Set speed back to zero if no move key is pressed by player
+        /* else if (!Input.GetKey(L) && !Input.GetKey(R))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        } */
+
+    }
+    // Jump function
+    void Jump()
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            // To make Jump sound effect
+            AudioManager.instance.RandomizeSfx(jump1, jump2);
+        }
+
+    void Shoot()
+    {
+        Instantiate(bullet, firepoint.position, firepoint.rotation);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+LevelManager script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelManager : MonoBehaviour
+{
+    public GameObject CurrentCheckpoint;
+    public Transform enemy;
+
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+    }
+
+    public void RespawnPlayer()
+    {
+        FindObjectOfType<Player>().transform.position = CurrentCheckpoint.transform.position;
+    }
+
+    // Used if Enemy respawning at a point is needed
+    public void RespawnEnemy()
+    {
+        Instantiate(enemy, transform.position, transform.rotation);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Spikes script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spikes : MonoBehaviour
+{
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().RespawnPlayer();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Checkpoints script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CheckPoints : MonoBehaviour
+{
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().CurrentCheckpoint = this.gameObject;
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Brick (Expolde) script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Brick : MonoBehaviour
+{
+    private SpriteRenderer sr;
+    public Sprite explodedBlock;
+
+    void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    void OnCollisionEnter2D (Collision2D other)
+    {
+        if (other.gameObject.tag == "Player" && other.GetContact(0).point.y < transform.position.y)
+        {
+            if (other.gameObject.tag == "Player" && other.GetContact(0).point.y < transform.position.y)
+            {
+                sr.sprite = explodedBlock;
+                Object.Destroy(gameObject, .2f);
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CameraFollow script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour
+{
+    public Transform target;
+    public float cameraSpeed;
+    public float minX, maxX;
+    public float minY, maxY;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    void FixedUpdate()
+    {
+        if (target != null)
+        {
+            Vector2 newCamPosition = Vector2.Lerp(transform.position, target.position, Time.deltaTime * cameraSpeed);
+            float clampX = Mathf.Clamp(newCamPosition.x, minX, maxX);
+            float clampY = Mathf.Clamp(newCamPosition.y, minY, maxY);
+            transform.position = new Vector3(clampX, clampY, -10f);
+        }
+    }
+
+    void Update()
+    {
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Camera zoom script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraZoom : MonoBehaviour
+{
+    private Camera cam;
+    public float zoomSpeed;
+    public KeyCode zButton; 
+    // Start is called before the first frame update
+    void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey(zButton))
+        {
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, Time.deltaTime * zoomSpeed);
+        }
+        else
+        {
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 5, Time.deltaTime * zoomSpeed);
+        }
+    }
+
+    void Update()
+    {
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+PlayerStats script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerStats : MonoBehaviour
+{
+    public int health = 6;
+    public int lives = 3;
+
+    private float flickerTime = 0f;
+    private float flickerDuration = 0.1f;
+
+    private SpriteRenderer spriteRenderer;
+
+    public bool isImmune = false;
+    private float immunityTime = 0f;
+    private float immunityDuration = 1.5f;
+   
+    public int coinsCollected = 0;
+
+    public AudioClip GameOverSound;
+
+    void Start()
+    {
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+    }
+
+    void SpriteFlicker()
+    {
+        if (this.flickerTime < this.flickerDuration)
+        {
+            this.flickerTime += Time.deltaTime;
+        }
+        else if (this.flickerTime >= this.flickerDuration)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            this.flickerTime = 0;
+        }
+    }
+
+     public void TakeDamage(int damage)
+    {
+        if (this.isImmune == false)
+        {
+            this.health -= damage;
+            if (this.health < 0) this.health = 0;
+            if (this.lives > 0 && this.health == 0)
+            {
+                FindObjectOfType<LevelManager>().RespawnPlayer();
+                this.health = 6;
+                this.lives--;
+            }
+            else if (this.lives == 0 && this.health == 0)
+            {
+                AudioManager.instance.PlaySingle(GameOverSound);
+                AudioManager.instance.musicSource.Stop();
+                Debug.Log("Gameover");
+                Destroy(this.gameObject);
+            }
+            Debug.Log("Player Health:" + this.health.ToString());
+            Debug.Log("Player Lives:" + this.lives.ToString());
+        }
+        PlayHitReaction();
+    }
+
+    void PlayHitReaction()
+    {
+        this.isImmune = true;
+        this.immunityTime = 0f;
+    }
+
+    void Update()
+    {
+        if (this.isImmune == true)
+        {
+            SpriteFlicker();
+            immunityTime = immunityTime + Time.deltaTime;
+            if (immunityTime >= immunityDuration)
+            {
+                this.isImmune = false;
+                this.spriteRenderer.enabled = true;
+                // Debug.Log("Immunity has ended");
+            }
+        }
+    }
+
+    public void collectcoins(int coinvalue)
+    {
+        this.coinsCollected = this.coinsCollected + coinvalue;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+EnemyController script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
+{
+    public bool isFacingright = false;
+    public float maxSpeed = 2;
+    public int damage = 6;
+    public AudioClip hitSound;
+
+    public void Flip()
+    {
+        isFacingright = !isFacingright;
+        transform.localScale = new Vector3(-(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            AudioManager.instance.RandomizeSfx(hitSound);
+            FindObjectOfType<PlayerStats>().TakeDamage(damage);
+        }
+    }
+
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+WalkingEnemy script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WalkingEnemy : EnemyController
+{
+    void FixedUpdate()
+    {
+        if (this.isFacingright == true)
+        {
+            this.GetComponent<Rigidbody2D>().velocity = 
+            new Vector2(maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else
+        {
+            this.GetComponent<Rigidbody2D>().velocity = 
+            new Vector2(-maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+
+        }
+    }
+    
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.tag == "Wall")
+        {
+            Flip();
+        }
+        else if(collider.tag == "Enemy")
+        {
+            Flip();
+        }
+        if (collider.tag == "Player")
+        {
+            FindObjectOfType<PlayerStats>().TakeDamage(damage);
+            Flip();
+        }
+    }
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+SpawnPoint script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnPoint : MonoBehaviour
+{
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().RespawnEnemy();
+        }
+    }
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+FollowerEnemy script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FollowerEnemy : EnemyController
+{
+    public float speedtowardPlayer = 2f;
+    private Player player;
+
+    void Start()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
+    void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speedtowardPlayer * Time.deltaTime);  
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+BulletController script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BulletController : MonoBehaviour
+{
+    public float speed;
+    public float timeremaining;
+
+    void Start()
+    {
+        Player player;
+        player = FindObjectOfType<Player>();
+
+        if (player.transform.localScale.x < 0)
+        {
+            speed = -speed;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+    void Update()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+
+        if (timeremaining > 0)
+        {
+            timeremaining -= Time.deltaTime;
+        }
+        else if (timeremaining <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+                Destroy(this.gameObject);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+KillEnemy script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class KillEnemy : MonoBehaviour
+{
+
+    public GameObject enemy;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.tag == "Bullet")
+        {
+            Destroy(enemy);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+AudioManager script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AudioManager : MonoBehaviour
+{
+    public AudioSource musicSource;
+    public AudioSource efxSource;
+    public static AudioManager instance = null;
+    public float lowPitchRange = .95f;
+    public float highPitchRange = 1.05f;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void RandomizeSfx(params AudioClip[] clips)
+    {
+        int randomIndex = Random.Range(0, clips.Length);
+        float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+        efxSource.pitch = randomPitch;
+        efxSource.clip = clips[randomIndex];
+        efxSource.Play();
+    }
+
+    public void PlaySingle(AudioClip clip)
+    {
+        efxSource.clip = clip;
+        efxSource.Play();
+    }
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CoinPickup script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CoinPickup : MonoBehaviour
+{
+
+    public int coinValue;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+    
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if(other.name == "Player")
+        {
+            FindObjectOfType<PlayerStats>().coinsCollected += coinValue;
+            Destroy(this.gameObject);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
