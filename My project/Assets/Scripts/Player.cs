@@ -6,90 +6,89 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
+    public KeyCode Spacebar;
+    public KeyCode L;
+    public KeyCode R;
 
-    public KeyCode spacebar;
-    public KeyCode keyLeft;
-    public KeyCode keyRight;
-    public KeyCode returnKey;
-    public Transform firePoint;
-    public GameObject bullet;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool grounded;
 
     private Animator anim;
-    private Rigidbody2D rb2d;
-    private SpriteRenderer spriteRenderer;
 
-    void Start()
-    {
+    public KeyCode Return;
+    public Transform firepoint;
+    public GameObject bullet;
+
+    public AudioClip jump1;
+    public AudioClip jump2;
+
+
+    void Start() {
         anim = GetComponent<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        Debug.Log("Grounded Status: " + grounded); // Debug log for grounded status
     }
 
-    void Update()
-    {
-        if (anim != null)
-        {
-            anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
-            anim.SetBool("Grounded", grounded);
-        }
+    void Update() {
 
-        if (Input.GetKeyDown(spacebar) && grounded)
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetBool("Grounded", grounded);
+        
+        // Jump condition
+        if (Input.GetKeyDown(Spacebar) && grounded)
         {
-            Debug.Log("Jump key pressed and grounded"); // Debug log for jump key press
             Jump();
         }
 
-        if (Input.GetKeyDown(returnKey))
+        // Move left
+        else if (Input.GetKey(L))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+            if (transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        // Move right
+        else if (Input.GetKey(R))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+            if (transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        else if (Input.GetKeyDown(Return))
         {
             Shoot();
         }
-
-        Debug.Log($"KeyLeft: {Input.GetKey(keyLeft)}, KeyRight: {Input.GetKey(keyRight)}");
-
-        if (Input.GetKey(keyLeft))
+        
+        // Set speed back to zero if no move key is pressed by player
+        /* else if (!Input.GetKey(L) && !Input.GetKey(R))
         {
-            rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.flipX = true;
-            }
-        }
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        } */
 
-        if (Input.GetKey(keyRight))
-        {
-            rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.flipX = false;
-            }
-        }
     }
-
-    public void Shoot()
-    {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
-    }
-
-    private void Jump()
-    {
-        if (grounded)
+    // Jump function
+    void Jump()
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpHeight);
-            Debug.Log("Jump executed"); // Debug log for jump execution
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            // To make Jump sound effect
+            AudioManager.instance.RandomizeSfx(jump1, jump2);
         }
-        else
-        {
-            Debug.Log("Cannot jump, not grounded"); // Debug log if not grounded
-        }
+
+    void Shoot()
+    {
+        Instantiate(bullet, firepoint.position, firepoint.rotation);
     }
 }
