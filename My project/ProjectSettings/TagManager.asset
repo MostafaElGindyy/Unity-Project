@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Background
   - player
-  - groundlayer
+  - Ground
   - 
   - 
   - 
@@ -44,14 +44,11 @@ TagManager:
   - name: Background
     uniqueID: 2489343937
     locked: 0
-  - name: ground
+  - name: Ground
     uniqueID: 79906557
     locked: 0
   - name: Player
     uniqueID: 3243672575
-    locked: 0
-  - name: ground layer
-    uniqueID: 1958227285
     locked: 0
   - name: New Layer 5
     uniqueID: 3978023157
