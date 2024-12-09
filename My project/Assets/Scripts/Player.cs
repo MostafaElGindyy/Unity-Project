@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
             // To make Jump sound effect
-            AudioManager.instance.RandomizeSfx(jump1, jump2);
+            // AudioManager.instance.RandomizeSfx(jump1, jump2);
         }
 
     void Shoot()
