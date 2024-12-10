@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health = 6;
+    public int health = 6; // Player's starting health, adjust as needed
     public int lives = 3;
 
     private float flickerTime = 0f;
@@ -17,8 +17,6 @@ public class PlayerStats : MonoBehaviour
     private float immunityDuration = 1.5f;
    
     public int coinsCollected = 0;
-
-     public int health = 100; // Player's starting health
 
     void Start()
     {
@@ -38,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-     public void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (this.isImmune == false)
         {
@@ -47,18 +45,16 @@ public class PlayerStats : MonoBehaviour
             if (this.lives > 0 && this.health == 0)
             {
                 FindObjectOfType<LevelManager>().RespawnPlayer();
-                this.health = 6;
+                this.health = 6; // Reset health after respawn
                 this.lives--;
             }
             else if (this.lives == 0 && this.health == 0)
             {
-                // AudioManager.instance.PlaySingle(GameOverSound);
-                // AudioManager.instance.musicSource.Stop();
-                Debug.Log("Gameover");
+                Debug.Log("Game over");
                 Destroy(this.gameObject);
             }
-            Debug.Log("Player Health:" + this.health.ToString());
-            Debug.Log("Player Lives:" + this.lives.ToString());
+            Debug.Log("Player Health: " + this.health);
+            Debug.Log("Player Lives: " + this.lives);
         }
         PlayHitReaction();
     }
@@ -74,31 +70,19 @@ public class PlayerStats : MonoBehaviour
         if (this.isImmune == true)
         {
             SpriteFlicker();
-            immunityTime = immunityTime + Time.deltaTime;
+            immunityTime += Time.deltaTime;
             if (immunityTime >= immunityDuration)
             {
                 this.isImmune = false;
                 this.spriteRenderer.enabled = true;
-                // Debug.Log("Immunity has ended");
             }
         }
     }
 
-    public void collectcoins(int coinvalue)
+    public void CollectCoins(int coinValue)
     {
-        this.coinsCollected = this.coinsCollected + coinvalue;
-    }
-}
-
-public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log("Player took damage: " + damage + ". Current health: " + health);
-
-        if (health <= 0)
-        {
-            Die();
-        }
+        this.coinsCollected += coinValue;
+        Debug.Log("Coins Collected: " + this.coinsCollected);
     }
 
     private void Die()
