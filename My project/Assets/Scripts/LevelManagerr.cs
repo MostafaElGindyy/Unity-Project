@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LevelManagerr : MonoBehaviour
 {
-    public GameObject CurrentCheckpoint;
+    public GameObject CurrentCheckpoint; // Ensure this is assigned in Inspector
+    public Transform enemy;
 
     void Start()
     {
-        CurrentCheckpoint = null;
     }
 
     void Update()
@@ -17,6 +17,22 @@ public class LevelManagerr : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        FindObjectOfType<Player>().transform.position = CurrentCheckpoint.transform.position;
+        // Add a check to ensure CurrentCheckpoint is not null
+        if (CurrentCheckpoint != null)
+        {
+            FindObjectOfType<Player>().transform.position = CurrentCheckpoint.transform.position;
+            Debug.Log("Player respawned at checkpoint"); // Debug log for respawning player
+        }
+        else
+        {
+            Debug.LogError("CurrentCheckpoint is not assigned!"); // Error log if checkpoint is not assigned
+        }
+    }
+
+    public void RespawnEnemy()
+    {
+        // Ensure enemy is assigned in the Inspector
+        Instantiate(enemy, transform.position, transform.rotation);
+        Debug.Log("Enemy respawned"); // Debug log for respawning enemy
     }
 }

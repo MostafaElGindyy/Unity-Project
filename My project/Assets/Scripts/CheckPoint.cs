@@ -14,9 +14,10 @@ public class CheckPoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") // Fix this to match the tag in your player
+        if (other.tag == "Player") // Ensure the player GameObject has the tag "Player"
         {
-            FindObjectOfType<LevelManagerr>().CurrentCheckpoint = this.gameObject;
+            FindObjectOfType<LevelManager>().CurrentCheckpoint = this.gameObject;
+            Debug.Log("Checkpoint set"); // Debug log for setting checkpoint
         }
     }
 }
