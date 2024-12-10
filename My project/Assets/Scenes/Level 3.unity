@@ -2159,14 +2159,14 @@ MonoBehaviour:
   Spacebar: 32
   L: 276
   R: 275
+  Attack1: 256
+  Attack2: 0
+  Attack3: 0
   groundCheck: {fileID: 1333507740}
   groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  Return: 0
-  firepoint: {fileID: 0}
-  bullet: {fileID: 0}
 --- !u!61 &2054858751
 BoxCollider2D:
   m_ObjectHideFlags: 0

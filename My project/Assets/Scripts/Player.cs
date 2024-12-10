@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public KeyCode Spacebar;
     public KeyCode L;
     public KeyCode R;
+    public KeyCode Attack1;
+    public KeyCode Attack2;
+    public KeyCode Attack3;
 
     public Transform groundCheck;
     public float groundCheckRadius;
