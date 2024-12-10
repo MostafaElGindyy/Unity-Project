@@ -14,9 +14,9 @@ public class Spike : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") // Fix this to match the tag in your player
+        if (other.tag == "Player") // Check if the colliding object has the tag "Player"
         {
-            FindObjectOfType<LevelManagerr>().RespawnPlayer();
+            FindObjectOfType<LevelManagerr>().RespawnPlayer(); // Call the RespawnPlayer method from LevelManagerr
         }
     }
 }
