@@ -1674,7 +1674,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  Return: 0
+  Attack: 0
   firepoint: {fileID: 0}
   bullet: {fileID: 0}
   jump1: {fileID: 0}
@@ -1786,7 +1786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054858749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.71, y: -6.94, z: 0}
+  m_LocalPosition: {x: -24.5, y: -7.2, z: 0}
   m_LocalScale: {x: 6.988017, y: 6.6494303, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
