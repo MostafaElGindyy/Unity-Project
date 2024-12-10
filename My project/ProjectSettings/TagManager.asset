@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - Water
   - UI
   - Background
-  - player
+  - Player
   - Ground
-  - 
+  - Object
   - 
   - 
   - 
@@ -50,6 +51,6 @@ TagManager:
   - name: Player
     uniqueID: 3243672575
     locked: 0
-  - name: New Layer 5
+  - name: Object
     uniqueID: 3978023157
     locked: 0

@@ -17,14 +17,6 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-    public KeyCode Attack;
-    public Transform firepoint;
-    public GameObject bullet;
-
-    public AudioClip jump1;
-    public AudioClip jump2;
-
-
     void Start() {
         anim = GetComponent<Animator>();
     }
@@ -66,11 +58,6 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
-
-        else if (Input.GetKeyDown(Attack))
-        {
-            Shoot();
-        }
         
         // Set speed back to zero if no move key is pressed by player
         /* else if (!Input.GetKey(L) && !Input.GetKey(R))
@@ -86,9 +73,4 @@ public class Player : MonoBehaviour
             // To make Jump sound effect
             // AudioManager.instance.RandomizeSfx(jump1, jump2);
         }
-
-    void Shoot()
-    {
-        Instantiate(bullet, firepoint.position, firepoint.rotation);
-    }
 }
