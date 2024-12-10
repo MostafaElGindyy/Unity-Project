@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,742 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TRAPS_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 3097
+        width: 868
+        height: 872
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda6c303bb685bd40919f15f6009e142
+      internalID: 196328964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_1
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 3097
+        width: 869
+        height: 869
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4418fbcdc928c34da81864ed479a4f6
+      internalID: 130165766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_2
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 3097
+        width: 869
+        height: 869
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7584de76a5b170c4ebf5df744396d5f5
+      internalID: -58854573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_3
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 3097
+        width: 869
+        height: 869
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb82bb75827c59d45af11d88b2652c1d
+      internalID: 1504959837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 2894
+        width: 164
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7ede2af47d85642b7992dfe6b7b15a
+      internalID: 1055171770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2894
+        width: 172
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd91eae7a9a25444086da3ab521c6e86
+      internalID: 2021113492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_6
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 2907
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d453331e2e36c148ac3e31c57dc25b2
+      internalID: 1394153933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_7
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 2534
+        width: 496
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6c3c7421a4c3040b37762d4aa52421
+      internalID: -1381948078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_8
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 2062
+        width: 991
+        height: 990
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4606074ab101a4d4e95f2eed5b21b7ee
+      internalID: 1760706316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_9
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 2054
+        width: 992
+        height: 992
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d04180e0856ea5438a4e7cf7f78a6bf
+      internalID: -401902602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_10
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2187
+        width: 80
+        height: 675
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898ee8a1682301c478a32003f5adb68e
+      internalID: -700956942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1224
+        width: 96
+        height: 1640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4b43c7234d9294f9b9f7c0bab76bf4
+      internalID: -1564800394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1064
+        width: 848
+        height: 1800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a8082bac5b0104bb86462693d62ef7
+      internalID: 1171511305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_13
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 2015
+        width: 496
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a527b439abcd5b489e6fa7e86668f45
+      internalID: -1288617179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_14
+      rect:
+        serializedVersion: 2
+        x: 3923
+        y: 2157
+        width: 72
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e52825489d885439bff4b5e6e98f4f
+      internalID: 1309591592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_15
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1228
+        width: 68
+        height: 902
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bd27879f0fd7144b5c2e1649f5184f
+      internalID: -1981461867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_16
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1665
+        width: 301
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7066686fd50fffa4088d06ce03b17ab9
+      internalID: -216710970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_17
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1364
+        width: 734
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e1c526eb7c8794a8c84bf67b95d7ad
+      internalID: 549366337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_18
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 876
+        width: 349
+        height: 1166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb47a0c4c2c7f74285e6b637e8f746a
+      internalID: 1181155862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_19
+      rect:
+        serializedVersion: 2
+        x: 3126
+        y: 876
+        width: 350
+        height: 1166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a49aab85d69e5b4e830c04f291b3dcc
+      internalID: 1400572592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_20
+      rect:
+        serializedVersion: 2
+        x: 3501
+        y: 876
+        width: 350
+        height: 1166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581e35444c1b8a546a2c989b4148e1d3
+      internalID: -177581009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_21
+      rect:
+        serializedVersion: 2
+        x: 3913
+        y: 1748
+        width: 74
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9baa2cedab20a614484796d177c2fc86
+      internalID: -809812452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_22
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1323
+        width: 301
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cc40f615aa60f438c73668f83074ec
+      internalID: 1801900740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_23
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 1013
+        width: 1166
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491e34a0be50c574c9c0b2e9869dcc39
+      internalID: -877076901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_24
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 1312
+        width: 76
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a2703d2924de24091b3d061e4f7181
+      internalID: -238636087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_25
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1063
+        width: 222
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c523b2e6c6760499d37db5b1fc43fb
+      internalID: -410443134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_26
+      rect:
+        serializedVersion: 2
+        x: 3897
+        y: 905
+        width: 75
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f667f35b1802334297f40f80e9b9e7b
+      internalID: 1712273233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_27
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 519
+        width: 1446
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365d8885b8386684ca389d9bea3e51b2
+      internalID: -1906590242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_28
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 21
+        width: 987
+        height: 986
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc960cda71e49e45bb1d280a33727a6
+      internalID: -1874315981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_29
+      rect:
+        serializedVersion: 2
+        x: 2687
+        y: 106
+        width: 732
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a31ff9891e05647add0e88d7a9b2b7
+      internalID: 1329871696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_30
+      rect:
+        serializedVersion: 2
+        x: 3558
+        y: 11
+        width: 54
+        height: 845
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c8b566ea26fc84b8a2e474ac275281
+      internalID: -886174446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_31
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 11
+        width: 53
+        height: 836
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a5c5888efb9744abacee4619faa0b7
+      internalID: -1827160674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_32
+      rect:
+        serializedVersion: 2
+        x: 3776
+        y: 11
+        width: 69
+        height: 836
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2604a39144a72f647ba6482f4ec04102
+      internalID: 943183801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_33
+      rect:
+        serializedVersion: 2
+        x: 3884
+        y: 11
+        width: 66
+        height: 828
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebe1a0f4aa294246802ec623b31bf96
+      internalID: -379726989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRAPS_34
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 21
+        width: 1445
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6684ecc7798c04c4b9c5e87405e5bb37
+      internalID: 808809782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +849,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TRAPS_9: -401902602
+      TRAPS_23: -877076901
+      TRAPS_10: -700956942
+      TRAPS_27: -1906590242
+      TRAPS_33: -379726989
+      TRAPS_1: 130165766
+      TRAPS_4: 1055171770
+      TRAPS_29: 1329871696
+      TRAPS_22: 1801900740
+      TRAPS_13: -1288617179
+      TRAPS_25: -410443134
+      TRAPS_3: 1504959837
+      TRAPS_5: 2021113492
+      TRAPS_24: -238636087
+      TRAPS_8: 1760706316
+      TRAPS_26: 1712273233
+      TRAPS_17: 549366337
+      TRAPS_28: -1874315981
+      TRAPS_34: 808809782
+      TRAPS_6: 1394153933
+      TRAPS_0: 196328964
+      TRAPS_21: -809812452
+      TRAPS_14: 1309591592
+      TRAPS_15: -1981461867
+      TRAPS_2: -58854573
+      TRAPS_7: -1381948078
+      TRAPS_30: -886174446
+      TRAPS_31: -1827160674
+      TRAPS_32: 943183801
+      TRAPS_11: -1564800394
+      TRAPS_18: 1181155862
+      TRAPS_20: -177581009
+      TRAPS_19: 1400572592
+      TRAPS_12: 1171511305
+      TRAPS_16: -216710970
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -4,26 +4,12 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
-    private SpriteRenderer sr;
-
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        sr = GetComponent<SpriteRenderer>();
-    }
-
-    void OnCollisionEnter2D (Collision2D other)
-    {
-        if (other.gameObject.tag == "Player" && other.GetContact(0).point.y < transform.position.y)
+        if (other.CompareTag("Player"))
         {
-            if (other.gameObject.tag == "Player" && other.GetContact(0).point.y < transform.position.y)
-                Object.Destroy(gameObject, .2f);
-            }
+            Destroy(gameObject);
+            gameObject.SetActive(false); // Makes the platform disappear
         }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
