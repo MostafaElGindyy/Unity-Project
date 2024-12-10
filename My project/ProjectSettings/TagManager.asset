@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Object
+  - Spike
   layers:
   - Default
   - TransparentFX
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 3978023157
+    locked: 0
+  - name: Object
+    uniqueID: 938914379
     locked: 0
