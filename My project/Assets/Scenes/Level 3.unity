@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005b985b6cd8753498f1fc4ee4ffb297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 30
 --- !u!61 &608179982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1103,6 +1103,7 @@ GameObject:
   - component: {fileID: 1289175415}
   - component: {fileID: 1289175414}
   - component: {fileID: 1289175413}
+  - component: {fileID: 1289175416}
   m_Layer: 0
   m_Name: Acid (1)
   m_TagString: Untagged
@@ -1203,6 +1204,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289175416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289175412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe33538ba6542d48bcf5c27aec3164b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!1001 &1298055969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2120,6 +2134,7 @@ GameObject:
   - component: {fileID: 2054858751}
   - component: {fileID: 2054858750}
   - component: {fileID: 2054858755}
+  - component: {fileID: 2054858756}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -2287,6 +2302,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2054858756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054858749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c16518b66983749a615e2873d5ecb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  lives: 3
+  isImmune: 0
+  coinsCollected: 0
 --- !u!1001 &2136041288
 PrefabInstance:
   m_ObjectHideFlags: 0

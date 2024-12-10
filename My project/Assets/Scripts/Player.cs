@@ -17,10 +17,6 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-    public KeyCode Return;
-    public Transform firepoint;
-    public GameObject bullet;
-
     // public AudioClip jump1;
     // public AudioClip jump2;
 
@@ -67,10 +63,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(Return))
-        {
-            Shoot();
-        }
         
         // Set speed back to zero if no move key is pressed by player
         /* else if (!Input.GetKey(L) && !Input.GetKey(R))
@@ -86,9 +78,4 @@ public class Player : MonoBehaviour
             // To make Jump sound effect
             // AudioManager.instance.RandomizeSfx(jump1, jump2);
         }
-
-    void Shoot()
-    {
-        Instantiate(bullet, firepoint.position, firepoint.rotation);
-    }
 }
