@@ -18,6 +18,11 @@ public class PlayerStats : MonoBehaviour
    
     public int coinsCollected = 0;
 
+<<<<<<< HEAD
+=======
+    // public AudioClip GameOverSound;
+
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
@@ -50,7 +55,13 @@ public class PlayerStats : MonoBehaviour
             }
             else if (this.lives == 0 && this.health == 0)
             {
+<<<<<<< HEAD
                 Debug.Log("Game over");
+=======
+               // AudioManager.instance.PlaySingle(GameOverSound);
+                // AudioManager.instance.musicSource.Stop();
+                Debug.Log("Gameover");
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
                 Destroy(this.gameObject);
             }
             Debug.Log("Player Health: " + this.health);
@@ -81,6 +92,7 @@ public class PlayerStats : MonoBehaviour
 
     public void CollectCoins(int coinValue)
     {
+<<<<<<< HEAD
         this.coinsCollected += coinValue;
         Debug.Log("Coins Collected: " + this.coinsCollected);
     }
@@ -91,3 +103,8 @@ public class PlayerStats : MonoBehaviour
         FindObjectOfType<LevelManager>().RespawnPlayer();
     }
 }
+=======
+        this.coinsCollected = this.coinsCollected + coinvalue;
+    }
+}
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10

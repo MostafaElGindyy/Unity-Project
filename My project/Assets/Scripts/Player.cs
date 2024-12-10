@@ -6,19 +6,21 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
+    public KeyCode Spacebar;
+    public KeyCode L;
+    public KeyCode R;
+    public KeyCode Attack1;
+    public KeyCode Attack2;
+    public KeyCode Attack3;
 
-    public KeyCode spacebar;
-    public KeyCode keyLeft;
-    public KeyCode keyRight;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool grounded;
 
     private Animator anim;
-    private Rigidbody2D rb2d;
-    private SpriteRenderer spriteRenderer;
 
+<<<<<<< HEAD
     public KeyCode Return; // For shooting
     public Transform firepoint; // Shooting fire point
     public GameObject bullet; // Bullet prefab
@@ -28,37 +30,38 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+=======
+    // public AudioClip jump1;
+    // public AudioClip jump2;
 
-        // Check if components are assigned correctly
-        if (anim == null) Debug.LogError("Animator component missing on Player.");
-        if (rb2d == null) Debug.LogError("Rigidbody2D component missing on Player.");
-        if (spriteRenderer == null) Debug.LogError("SpriteRenderer component missing on Player.");
+
+    void Start() {
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        Debug.Log("Grounded Status: " + grounded); // Debug log for grounded status
     }
 
-    void Update()
-    {
-        if (anim != null)
-        {
-            anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x)); // Update Speed parameter in Animator
-            anim.SetBool("Grounded", grounded);
-        }
+    void Update() {
 
+<<<<<<< HEAD
         // Jump condition
         if (Input.GetKeyDown(spacebar) && grounded)
+=======
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetBool("Grounded", grounded);
+        
+        // Jump condition
+        if (Input.GetKeyDown(Spacebar) && grounded)
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
         {
-            Debug.Log("Jump key pressed and grounded"); // Debug log for jump key press
             Jump();
         }
 
+<<<<<<< HEAD
         // Shoot condition
         if (Input.GetKeyDown(Return))
         {
@@ -77,9 +80,31 @@ public class Player : MonoBehaviour
         {
             rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
             spriteRenderer.flipX = false;
-        }
-    }
+=======
+        // Move left
+        else if (Input.GetKey(L))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
+            if (transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        // Move right
+        else if (Input.GetKey(R))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+            if (transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
+        }
+
+<<<<<<< HEAD
     // Jump function
     private void Jump()
     {
@@ -92,5 +117,21 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet, firepoint.position, firepoint.rotation);
+=======
+        
+        // Set speed back to zero if no move key is pressed by player
+        /* else if (!Input.GetKey(L) && !Input.GetKey(R))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        } */
+
+>>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
     }
+    // Jump function
+    void Jump()
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            // To make Jump sound effect
+            // AudioManager.instance.RandomizeSfx(jump1, jump2);
+        }
 }

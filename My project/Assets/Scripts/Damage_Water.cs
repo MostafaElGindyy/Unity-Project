@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class Damage_Water : MonoBehaviour
 {
     public int damage = 1; // The amount of damage to deal when the player hits the spikes
 

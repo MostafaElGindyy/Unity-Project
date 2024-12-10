@@ -3,20 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Enemy
   - Object
+  - Spike
+=======
+  tags: []
+>>>>>>> aa47c4d94521037743f2e233c3bcc3dc5dc0167a
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - lll
+  - 
   - Water
   - UI
-  - Background
-  - Player
-  - Ground
-  - Object
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -43,6 +48,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Background
     uniqueID: 2489343937
     locked: 0
@@ -55,3 +61,8 @@ TagManager:
   - name: foreground
     uniqueID: 3978023157
     locked: 0
+  - name: Object
+    uniqueID: 938914379
+    locked: 0
+=======
+>>>>>>> aa47c4d94521037743f2e233c3bcc3dc5dc0167a
