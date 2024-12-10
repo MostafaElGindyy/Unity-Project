@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
    
     public int coinsCollected = 0;
 
-     public int health = 100; // Player's starting health
+    // public AudioClip GameOverSound;
 
     void Start()
     {
@@ -52,7 +52,7 @@ public class PlayerStats : MonoBehaviour
             }
             else if (this.lives == 0 && this.health == 0)
             {
-                // AudioManager.instance.PlaySingle(GameOverSound);
+               // AudioManager.instance.PlaySingle(GameOverSound);
                 // AudioManager.instance.musicSource.Stop();
                 Debug.Log("Gameover");
                 Destroy(this.gameObject);
@@ -87,23 +87,5 @@ public class PlayerStats : MonoBehaviour
     public void collectcoins(int coinvalue)
     {
         this.coinsCollected = this.coinsCollected + coinvalue;
-    }
-}
-
-public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log("Player took damage: " + damage + ". Current health: " + health);
-
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Debug.Log("Player has died!");
-        FindObjectOfType<LevelManager>().RespawnPlayer();
     }
 }

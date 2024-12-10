@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    public int damageAmount = 25; // Damage dealt by spikes
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Start()
     {
-        // Check if the player has collided
-        if (collision.CompareTag("Player"))
-        {
-            PlayerStats playerStats = collision.GetComponent<PlayerStats>();
+    }
 
-            if (playerStats != null && !playerStats.isImmune) // Check if the player is not immune
-            {
-                playerStats.TakeDamage(damageAmount);
-            }
+    void Update()
+    {
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().RespawnPlayer();
         }
     }
 }
