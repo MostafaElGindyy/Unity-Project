@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
+    public int damage = 1; // The amount of damage to deal when the player hits the spikes
+
     void Start()
     {
     }
@@ -14,9 +16,14 @@ public class Spikes : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            FindObjectOfType<LevelManager>().RespawnPlayer();
+            // Call the TakeDamage function from PlayerStats on the player object
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(damage); // Pass damage amount to the TakeDamage method
+            }
         }
     }
 }
