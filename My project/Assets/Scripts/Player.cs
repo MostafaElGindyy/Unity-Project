@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-    public KeyCode Return;
+    public KeyCode Attack;
     public Transform firepoint;
     public GameObject bullet;
 
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(Return))
+        else if (Input.GetKeyDown(Attack))
         {
             Shoot();
         }
