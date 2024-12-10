@@ -2159,9 +2159,9 @@ MonoBehaviour:
   Spacebar: 32
   L: 276
   R: 275
-  Attack1: 256
-  Attack2: 0
-  Attack3: 0
+  Attack1: 120
+  Attack2: 99
+  Attack3: 118
   groundCheck: {fileID: 1333507740}
   groundCheckRadius: 0.5
   whatIsGround:

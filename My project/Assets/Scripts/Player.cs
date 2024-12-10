@@ -65,6 +65,23 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
+        
+    else if (Input.GetKeyDown(Attack1))
+    {
+        anim.SetTrigger("Attack1");
+    }
+
+    // Trigger Attack2 Animation
+    else if (Input.GetKeyDown(Attack2))
+    {
+        anim.SetTrigger("Attack2");
+    }
+
+    // Trigger Attack3 Animation
+    else if (Input.GetKeyDown(Attack3))
+    {
+        anim.SetTrigger("Attack3");
+    }
 
         
         // Set speed back to zero if no move key is pressed by player
