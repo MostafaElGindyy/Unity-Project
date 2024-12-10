@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     {
         if (anim != null)
         {
-            anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+            anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x)); // Update Speed parameter in Animator
             anim.SetBool("Grounded", grounded);
         }
 
