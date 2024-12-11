@@ -832,8 +832,8 @@ GameObject:
   - component: {fileID: 1044415577}
   - component: {fileID: 1044415576}
   - component: {fileID: 1044415575}
-  - component: {fileID: 1044415578}
   - component: {fileID: 1044415579}
+  - component: {fileID: 1044415580}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -907,24 +907,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1044415578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044415574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d42ad2347b898c4cac34246b7b7f3bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2054858754}
-  cameraSpeed: 4
-  minX: -25
-  maxX: 25
-  minY: -10
-  maxY: 10
 --- !u!114 &1044415579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +921,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomSpeed: 3
   zButton: 273
+--- !u!114 &1044415580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044415574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e942f7c107ad4095534aebef31e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2054858754}
+  cameraSpeed: 3
+  minX: -25
+  maxX: 25
+  minY: -20
+  maxY: 20
 --- !u!1 &1055875579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,9 +1036,9 @@ GameObject:
   - component: {fileID: 1094057700}
   - component: {fileID: 1094057705}
   - component: {fileID: 1094057706}
-  - component: {fileID: 1094057703}
   - component: {fileID: 1094057707}
   - component: {fileID: 1094057708}
+  - component: {fileID: 1094057709}
   m_Layer: 11
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -1139,19 +1139,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1094057703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094057698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e7143af8be2474191f2a2d576eec5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
 --- !u!61 &1094057705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1234,6 +1221,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1094057709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094057698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64868e9229e31f648a11e50aaa703c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!4 &1137366049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1655647130151501815, guid: 6b3cdfdfec5d6f048aafc3062589bcfa, type: 3}
