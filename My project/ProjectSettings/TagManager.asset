@@ -8,6 +8,7 @@ TagManager:
   - Object
   - Spike
   - Wall
+  - Ladder
   layers:
   - Default
   - TransparentFX

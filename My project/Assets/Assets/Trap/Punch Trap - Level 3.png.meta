@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 392dd26d1bbe7054ab2c09e41f973dbf
+guid: 084f337461390e24e80a957bbd4e8586
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Punch Trap - Level 3_0
       rect:
         serializedVersion: 2
-        x: 45
+        x: 592
         y: 0
-        width: 31
-        height: 65
+        width: 59
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab8799117ee09942b10aa58a0dfbdef
-      internalID: -665170072
+      spriteID: 5194b107910fdae4c995ad6f1e970f41
+      internalID: 526576645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Punch Trap - Level 3_1
       rect:
         serializedVersion: 2
-        x: 173
+        x: 807
         y: 0
-        width: 31
-        height: 65
+        width: 21
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a00d9d0e6bc8cc24db6e6629b70ae6b5
-      internalID: -6556738
+      spriteID: edc9784427e9e8a44854fb2d9366f670
+      internalID: -1695888743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Punch Trap - Level 3_2
       rect:
         serializedVersion: 2
-        x: 301
+        x: 903
         y: 0
-        width: 31
-        height: 65
+        width: 21
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2193f1b2cc6406c4692c399128d27638
-      internalID: -1751871078
+      spriteID: b7ca813c743485d41a0e3cfb0a5a9bdf
+      internalID: -1409368891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Punch Trap - Level 3_3
       rect:
         serializedVersion: 2
-        x: 429
+        x: 999
         y: 0
-        width: 31
-        height: 66
+        width: 21
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f24604ef69b067e468e77bd5e3665f29
-      internalID: -2115919051
+      spriteID: 6a8faec9c80a87b448ec9d7e93841b2e
+      internalID: 162790111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: Punch Trap - Level 3_4
       rect:
         serializedVersion: 2
-        x: 557
+        x: 1095
         y: 0
-        width: 31
-        height: 66
+        width: 21
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f947064e38750d42bf2ebdb520f0342
-      internalID: 803885144
+      spriteID: 78a9302a51650d74ca7b075508953575
+      internalID: -1562802158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_5
+      name: Punch Trap - Level 3_5
       rect:
         serializedVersion: 2
-        x: 685
+        x: 1191
         y: 0
-        width: 31
-        height: 65
+        width: 21
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +224,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ccae75af90ac784fb8952cf267f028a
-      internalID: -1820824569
+      spriteID: 2b2c8cadf44de2b43adf6b21d122d44f
+      internalID: 722549031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch Trap - Level 3_6
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a83bfc10a172754faa37774ebd64268
+      internalID: 717632068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch Trap - Level 3_7
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 0
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e8aa58b09adcf41a9493ddec231e04
+      internalID: -1641063172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punch Trap - Level 3_8
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 0
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcdd0e3842f6174a810b7f7d3aa7d01
+      internalID: -1954203387
       vertices: []
       indices: 
       edges: []
@@ -241,12 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_4: 803885144
-      Idle_1: -6556738
-      Idle_3: -2115919051
-      Idle_5: -1820824569
-      Idle_0: -665170072
-      Idle_2: -1751871078
+      Punch Trap - Level 3_7: -1641063172
+      Punch Trap - Level 3_1: -1695888743
+      Punch Trap - Level 3_5: 722549031
+      Punch Trap - Level 3_2: -1409368891
+      Punch Trap - Level 3_8: -1954203387
+      Punch Trap - Level 3_6: 717632068
+      Punch Trap - Level 3_0: 526576645
+      Punch Trap - Level 3_3: 162790111
+      Punch Trap - Level 3_4: -1562802158
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
