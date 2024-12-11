@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject CurrentCheckpoint;
-    public Transform enemy;
 
     void Start()
     {
@@ -22,10 +21,10 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Player respawned at checkpoint"); // Debug log for respawning player
     }
 
-    public void RespawnEnemy()
+    /* public void RespawnEnemy()
     {
         // Ensure enemy is assigned in the Inspector
         Instantiate(enemy, transform.position, transform.rotation);
         Debug.Log("Enemy respawned"); // Debug log for respawning enemy
-    }
+    } */
 }

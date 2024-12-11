@@ -20,6 +20,16 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
+
+    public float attack3Cooldown = 3f; // Cooldown time in seconds
+    private float nextAttack3Time = 0f;  // Time when Attack3 can be used again
+
+    // Damage values for each attack
+    public int damageAttack1 = 20;
+    public int damageAttack2 = 20;
+    public int damageAttack3 = 50;
+    
+
     // public AudioClip jump1;
     // public AudioClip jump2;
 
@@ -79,9 +89,17 @@ public class Player : MonoBehaviour
 
     // Trigger Attack3 Animation
     else if (Input.GetKeyDown(Attack3))
-    {
-        anim.SetTrigger("Attack3");
-    }
+        {
+            if (Time.time >= nextAttack3Time) // Check if cooldown is over
+            {
+                anim.SetTrigger("Attack3");
+                nextAttack3Time = Time.time + attack3Cooldown; // Reset cooldown timer
+            }
+            else
+            {
+                float remainingTime = nextAttack3Time - Time.time; // Calculate remaining cooldown time
+                Debug.Log($"Attack3 is on cooldown! Remaining time: {remainingTime:F1} seconds");            }
+        }
 
         
         // Set speed back to zero if no move key is pressed by player
@@ -98,4 +116,32 @@ public class Player : MonoBehaviour
             // To make Jump sound effect
             // AudioManager.instance.RandomizeSfx(jump1, jump2);
         }
+
+         void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            int damage = 0;
+
+            // Determine which attack is active and assign damage
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+            {
+                damage = damageAttack1;
+            }
+            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+            {
+                damage = damageAttack2;
+            }
+            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+            {
+                damage = damageAttack3;
+            }
+
+            // Apply damage to the enemy
+            if (damage > 0)
+            {
+                collision.GetComponent<Enemy>().TakeDamage(damage);
+            }
+        }
+    }
 }
