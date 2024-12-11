@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health = 6;
+    public int health = 100;
     public int lives = 3;
 
     private float flickerTime = 0f;
@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool isImmune = false;
     private float immunityTime = 0f;
-    private float immunityDuration = 1.5f;
+    public float immunityDuration = 1.5f;
    
     public int coinsCollected = 0;
 
