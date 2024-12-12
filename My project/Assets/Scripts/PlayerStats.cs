@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     public float immunityDuration = 1.5f;
    
     public int coinsCollected = 0;
+    public int coinsNeededForLife = 10; // Number of coins needed to add a life
 
     // public AudioClip GameOverSound;
 
@@ -35,6 +36,16 @@ public class PlayerStats : MonoBehaviour
         {
             spriteRenderer.enabled = !spriteRenderer.enabled;
             this.flickerTime = 0;
+        }
+    }
+
+    public void CheckForLifeIncrease()
+    {
+        if (coinsCollected >= coinsNeededForLife)
+        {
+            lives++;
+            coinsCollected -= coinsNeededForLife; // Reset coins after increasing life
+            Debug.Log("Lives increased! Current lives: " + lives);
         }
     }
 
