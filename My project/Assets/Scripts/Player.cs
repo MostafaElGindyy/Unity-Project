@@ -21,19 +21,14 @@ public class Player : MonoBehaviour
     private Animator anim;
 
     public float attack3Cooldown = 3f; // Cooldown time in seconds
-    private float nextAttack3Time = 0f; // Time when Attack3 can be used again
+    private float nextAttack3Time = 0f;  // Time when Attack3 can be used again
 
     // Damage values for each attack
     public int damageAttack1 = 20;
     public int damageAttack2 = 20;
     public int damageAttack3 = 50;
 
-<<<<<<< Updated upstream
     void Start() {
-=======
-    void Start()
-    {
->>>>>>> Stashed changes
         anim = GetComponent<Animator>();
     }
 
@@ -41,22 +36,11 @@ public class Player : MonoBehaviour
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 
-<<<<<<< Updated upstream
     void Update() {
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         anim.SetBool("Grounded", grounded);
 
         if (Input.GetKeyDown(Spacebar) && grounded) {
-=======
-    void Update()
-    {
-        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        anim.SetBool("Grounded", grounded);
-
-        // Jump condition
-        if (Input.GetKeyDown(Spacebar) && grounded)
-        {
->>>>>>> Stashed changes
             Jump();
         }
 
@@ -73,7 +57,6 @@ public class Player : MonoBehaviour
             }
         }
 
-<<<<<<< Updated upstream
         // Handle attack inputs and animations
         if (Input.GetKeyDown(Attack1)) {
             anim.SetTrigger("Attack1");
@@ -81,29 +64,9 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Attack2");
         } else if (Input.GetKeyDown(Attack3)) {
             if (Time.time >= nextAttack3Time) {
-=======
-        // Trigger Attack1 Animation
-        else if (Input.GetKeyDown(Attack1))
-        {
-            anim.SetTrigger("Attack1");
-        }
-
-        // Trigger Attack2 Animation
-        else if (Input.GetKeyDown(Attack2))
-        {
-            anim.SetTrigger("Attack2");
-        }
-
-        // Trigger Attack3 Animation with Cooldown
-        else if (Input.GetKeyDown(Attack3))
-        {
-            if (Time.time >= nextAttack3Time)
-            {
->>>>>>> Stashed changes
                 anim.SetTrigger("Attack3");
                 nextAttack3Time = Time.time + attack3Cooldown;
             }
-<<<<<<< Updated upstream
         }
     }
 
@@ -119,27 +82,6 @@ public class Player : MonoBehaviour
     // This method will be called when the player’s attack collides with an enemy
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy")) {
-=======
-            else
-            {
-                float remainingTime = nextAttack3Time - Time.time;
-                Debug.Log($"Attack3 is on cooldown! Remaining time: {remainingTime:F1} seconds");
-            }
-        }
-    }
-
-    // Jump function
-    void Jump()
-    {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-    }
-
-    // Handle collision with the enemy
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
->>>>>>> Stashed changes
             int damage = 0;
 
             // Determine which attack is active and assign damage
@@ -161,38 +103,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-<<<<<<< Updated upstream
-=======
-    // This function will be called by animation events
-public void ApplyDamage()
-{
-    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 1f); // Adjust the radius as needed
-
-    foreach (Collider2D enemy in hitEnemies)
-    {
-        if (enemy.CompareTag("Enemy"))
-        {
-            int damage = 0;
-
-            // Determine which attack animation is playing
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
-            {
-                damage = damageAttack1;
-            }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
-            {
-                damage = damageAttack2;
-            }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
-            {
-                damage = damageAttack3;
-            }
-
-            // Apply damage to the enemy
-            enemy.GetComponent<Enemy>().TakeDamage(damage);
-        }
-    }
-}
-
->>>>>>> Stashed changes
 }
