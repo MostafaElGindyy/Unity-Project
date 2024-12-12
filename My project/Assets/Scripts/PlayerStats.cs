@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health = 6; // Player's starting health, adjust as needed
+    public int health = 100;
     public int lives = 3;
 
     private float flickerTime = 0f;
@@ -14,15 +14,12 @@ public class PlayerStats : MonoBehaviour
 
     public bool isImmune = false;
     private float immunityTime = 0f;
-    private float immunityDuration = 1.5f;
+    public float immunityDuration = 1.5f;
    
     public int coinsCollected = 0;
 
-<<<<<<< HEAD
-=======
     // public AudioClip GameOverSound;
 
->>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
@@ -41,7 +38,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+     public void TakeDamage(int damage)
     {
         if (this.isImmune == false)
         {
@@ -49,23 +46,19 @@ public class PlayerStats : MonoBehaviour
             if (this.health < 0) this.health = 0;
             if (this.lives > 0 && this.health == 0)
             {
-                FindObjectOfType<LevelManager>().RespawnPlayer();
-                this.health = 6; // Reset health after respawn
+                FindObjectOfType<LevelManager>().RespawnPlayer(this.gameObject);
+                this.health = 100;
                 this.lives--;
             }
             else if (this.lives == 0 && this.health == 0)
             {
-<<<<<<< HEAD
-                Debug.Log("Game over");
-=======
                // AudioManager.instance.PlaySingle(GameOverSound);
                 // AudioManager.instance.musicSource.Stop();
                 Debug.Log("Gameover");
->>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10
                 Destroy(this.gameObject);
             }
-            Debug.Log("Player Health: " + this.health);
-            Debug.Log("Player Lives: " + this.lives);
+            Debug.Log("Player Health:" + this.health.ToString());
+            Debug.Log("Player Lives:" + this.lives.ToString());
         }
         PlayHitReaction();
     }
@@ -81,30 +74,18 @@ public class PlayerStats : MonoBehaviour
         if (this.isImmune == true)
         {
             SpriteFlicker();
-            immunityTime += Time.deltaTime;
+            immunityTime = immunityTime + Time.deltaTime;
             if (immunityTime >= immunityDuration)
             {
                 this.isImmune = false;
                 this.spriteRenderer.enabled = true;
+                // Debug.Log("Immunity has ended");
             }
         }
     }
 
-    public void CollectCoins(int coinValue)
+    public void collectcoins(int coinvalue)
     {
-<<<<<<< HEAD
-        this.coinsCollected += coinValue;
-        Debug.Log("Coins Collected: " + this.coinsCollected);
-    }
-
-    private void Die()
-    {
-        Debug.Log("Player has died!");
-        FindObjectOfType<LevelManager>().RespawnPlayer();
-    }
-}
-=======
         this.coinsCollected = this.coinsCollected + coinvalue;
     }
 }
->>>>>>> d37d36d24529ef979a3aaf918f55652c5696ae10

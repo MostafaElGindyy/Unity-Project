@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1449d7854e641740942555bf7d52c40
+guid: 5e4a937d3882af84493767123f5087e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_0
+      name: Spinning-Floppy-Disk_0
       rect:
         serializedVersion: 2
-        x: 47
+        x: 0
         y: 0
-        width: 39
-        height: 69
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db460e47eb537e742959d714b78f94dc
-      internalID: 278743470
+      spriteID: 49b942bdcf5382f45b84a3246f93cc11
+      internalID: 2005862079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: Spinning-Floppy-Disk_1
       rect:
         serializedVersion: 2
-        x: 174
+        x: 18
         y: 0
-        width: 40
-        height: 68
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,41 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f937eb59a4d3a45a3253d6bd068349
-      internalID: -1223183368
+      spriteID: 6f2ccbe2840eb10419fd8af08bb2bbef
+      internalID: 1612955227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: Spinning-Floppy-Disk_2
       rect:
         serializedVersion: 2
-        x: 291
-        y: 5
-        width: 54
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9861c7242844c44380d830edc4c2595
-      internalID: -187868268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_3
-      rect:
-        serializedVersion: 2
-        x: 421
+        x: 35
         y: 0
-        width: 49
-        height: 67
+        width: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52ef90f650f29c9418f632dda8b64e77
-      internalID: 1272549531
+      spriteID: 9c89672a23239614985b60dd05d11cd2
+      internalID: 180086266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_4
+      name: Spinning-Floppy-Disk_3
       rect:
         serializedVersion: 2
-        x: 550
+        x: 52
         y: 0
-        width: 37
-        height: 68
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450006fd3aa1ac346917400ded2ae488
-      internalID: -1745711721
+      spriteID: 266fd69974ed48040a52219853279c18
+      internalID: -474199600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_5
+      name: Spinning-Floppy-Disk_4
       rect:
         serializedVersion: 2
-        x: 691
+        x: 69
         y: 0
-        width: 37
-        height: 69
+        width: 20
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5027ddc55aa4e408e5727361534309
-      internalID: 404563387
+      spriteID: 226c8d47b5e60fc4fb45044b04ec03f9
+      internalID: 1302336874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_6
+      name: Spinning-Floppy-Disk_5
       rect:
         serializedVersion: 2
-        x: 816
+        x: 101
         y: 0
-        width: 39
-        height: 68
+        width: 6
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,62 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb9df828cbdfdca40b20f5b57e89f142
-      internalID: -1197836761
+      spriteID: 6c622e0b8271ddd44b17f04820b7427c
+      internalID: -367363184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_7
+      name: Spinning-Floppy-Disk_6
       rect:
         serializedVersion: 2
-        x: 934
-        y: 5
-        width: 53
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b5b2ca6b080b144894ef8e69354773a
-      internalID: -1728574014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_8
-      rect:
-        serializedVersion: 2
-        x: 1063
-        y: 2
-        width: 51
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f6bae343c3edef49be968027d61f520
-      internalID: -294401014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_9
-      rect:
-        serializedVersion: 2
-        x: 1192
+        x: 115
         y: 0
-        width: 36
-        height: 68
+        width: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +245,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ec8eaae3261ee4f969c5f28263f453
-      internalID: -1405833304
+      spriteID: ddcda2b13c17f1e45bc03d4cf2885409
+      internalID: -144572044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6108ee063f9d0394cbe2af5e36981b2a
+      internalID: -247473326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_8
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d188a1a948de8749907b218167a90dc
+      internalID: -1716534933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083fa5b03fe471c478623c352bf83038
+      internalID: -755906014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_10
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2401cc0e322c9444923d5dfe8ca3a7e
+      internalID: -2090720325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1e8fc511ae8784aba89fd68c5128d9
+      internalID: 1190913269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 0
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3542d35fe19094479c63097f80649d1
+      internalID: -1307819297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_13
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bdc21d97a6a06469e174fed66ad530
+      internalID: -1064883033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_14
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1a77adab77f6b46a6503a199519666
+      internalID: -672931788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spinning-Floppy-Disk_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406b8236b94e84c40b9eed45599b5289
+      internalID: 1045490850
       vertices: []
       indices: 
       edges: []
@@ -325,16 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run_8: -294401014
-      Run_6: -1197836761
-      Run_2: -187868268
-      Run_1: -1223183368
-      Run_3: 1272549531
-      Run_7: -1728574014
-      Run_4: -1745711721
-      Run_0: 278743470
-      Run_9: -1405833304
-      Run_5: 404563387
+      Spinning-Floppy-Disk_11: 1190913269
+      Spinning-Floppy-Disk_6: -144572044
+      Spinning-Floppy-Disk_8: -1716534933
+      Spinning-Floppy-Disk_0: 2005862079
+      Spinning-Floppy-Disk_5: -367363184
+      Spinning-Floppy-Disk_2: 180086266
+      Spinning-Floppy-Disk_14: -672931788
+      Spinning-Floppy-Disk_3: -474199600
+      Spinning-Floppy-Disk_7: -247473326
+      Spinning-Floppy-Disk_13: -1064883033
+      Spinning-Floppy-Disk_9: -755906014
+      Spinning-Floppy-Disk_4: 1302336874
+      Spinning-Floppy-Disk_10: -2090720325
+      Spinning-Floppy-Disk_15: 1045490850
+      Spinning-Floppy-Disk_1: 1612955227
+      Spinning-Floppy-Disk_12: -1307819297
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
