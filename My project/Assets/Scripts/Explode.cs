@@ -4,21 +4,46 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
-    public int damageAmount = 20; // Damage amount that can be controlled in the Inspector
+    public int damageAmount = 50; // Damage amount
+    private Animator animator; // Reference to the Animator component
+    private bool hasExploded = false; // Prevent multiple triggers
+
+    void Start()
+    {
+        // Get the Animator component
+        animator = GetComponent<Animator>();
+
+        if (animator == null)
+        {
+            Debug.LogError("Animator component not found on the object.");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Check if the colliding object has the "Player" tag
+        if (!hasExploded && other.CompareTag("Player")) // Ensure it only triggers once
         {
-            // Get the PlayerStats component from the player
+            hasExploded = true; // Prevent further triggers
+
+            // Apply damage to the player
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
             if (playerStats != null)
             {
-                playerStats.TakeDamage(damageAmount); // Apply damage to the player
+                playerStats.TakeDamage(damageAmount);
             }
 
-            // Instantiate explosion effect
-            Destroy(gameObject); // Destroy this game object
+            // Play the explosion animation
+            animator.SetTrigger("Explode");
+
+            // Destroy the object after the animation
+            StartCoroutine(DestroyAfterAnimation());
         }
+    }
+
+    IEnumerator DestroyAfterAnimation()
+    {
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
     }
 }
