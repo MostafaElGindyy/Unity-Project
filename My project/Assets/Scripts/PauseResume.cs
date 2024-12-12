@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,7 @@ public class PauseResume : MonoBehaviour
                 Jump();
             }
         }
-    }*/
+    }
 
     void pause()
     {
@@ -40,7 +40,7 @@ public class PauseResume : MonoBehaviour
         paused= true;
         time.timeScale=0;
     }
-    public void resume()
+    void resume()
     {
         PauseScreen.SetActive(false);
         paused=false;
@@ -48,3 +48,5 @@ public class PauseResume : MonoBehaviour
     }
 }
 }
+
+*/
