@@ -24,12 +24,14 @@ public class Player : MonoBehaviour
     private float nextAttack3Time = 0f;  // Time when Attack3 can be used again
 
     // Damage values for each attack
+    public CircleCollider2D punchCollider; // Reference to the punch collider
     public int damageAttack1 = 20;
     public int damageAttack2 = 20;
     public int damageAttack3 = 50;
 
     void Start() {
         anim = GetComponent<Animator>();
+        punchCollider.enabled = false;
     }
 
     void FixedUpdate() {
@@ -60,14 +62,27 @@ public class Player : MonoBehaviour
         // Handle attack inputs and animations
         if (Input.GetKeyDown(Attack1)) {
             anim.SetTrigger("Attack1");
+            EnablePunchCollider(); // Enable punch collider during attack
         } else if (Input.GetKeyDown(Attack2)) {
             anim.SetTrigger("Attack2");
+            EnablePunchCollider(); // Enable punch collider during attack
         } else if (Input.GetKeyDown(Attack3)) {
             if (Time.time >= nextAttack3Time) {
                 anim.SetTrigger("Attack3");
+                EnablePunchCollider(); // Enable punch collider during attack
                 nextAttack3Time = Time.time + attack3Cooldown;
             }
         }
+    }
+
+    void EnablePunchCollider()
+    {
+        punchCollider.enabled = true; // Activate the punch collider
+    }
+
+    void DisablePunchCollider()
+    {
+        punchCollider.enabled = false; // Deactivate the punch collider
     }
 
     void Jump() {
@@ -80,27 +95,37 @@ public class Player : MonoBehaviour
     }
 
     // This method will be called when the player’s attack collides with an enemy
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Enemy")) {
-            int damage = 0;
+    void OnTriggerEnter2D(Collider2D collision)
+{
+    // Check if the collision is with an enemy
+    if (collision.CompareTag("Enemy")) // Make sure the enemy is tagged correctly
+    {
+        int damage = 0;
 
-            // Determine which attack is active and assign damage
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1")) {
-                damage = damageAttack1;
-            } else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2")) {
-                damage = damageAttack2;
-            } else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3")) {
-                damage = damageAttack3;
-            }
+        // Determine which attack animation is playing and assign damage
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+        {
+            damage = damageAttack1;
+        }
+        else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        {
+            damage = damageAttack2;
+        }
+        else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+        {
+            damage = damageAttack3;
+        }
 
-            // Apply damage to the enemy
-            if (damage > 0) {
-                Enemy enemy = collision.GetComponent<Enemy>();
-                if (enemy != null) {
-                    enemy.TakeDamage(damage);
-                    Debug.Log($"Enemy health after attack: {enemy.health}");
-                }
+        // Apply damage to the enemy if necessary
+        if (damage > 0)
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                Debug.Log($"Enemy health after attack: {enemy.health}");
             }
         }
     }
+}
 }
