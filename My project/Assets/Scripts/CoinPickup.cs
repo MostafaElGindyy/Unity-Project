@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
-    public int coinValue = 1; // Assuming each coin is worth 1 for simplicity
+    public int coinValue = 1;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class CoinPickup : MonoBehaviour
         {
             var playerStats = FindObjectOfType<PlayerStats>();
             playerStats.coinsCollected += coinValue;
+            Debug.Log("Current coins collected: " + playerStats.coinsCollected); // Debug current coins
             playerStats.CheckForLifeIncrease(); // Check for life increase when coins are collected
             Destroy(this.gameObject);
         }
