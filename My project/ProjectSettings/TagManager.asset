@@ -11,6 +11,7 @@ TagManager:
   - Ladder
   - Checkpoint
   - Coin
+  - Barrel
   layers:
   - Default
   - TransparentFX
