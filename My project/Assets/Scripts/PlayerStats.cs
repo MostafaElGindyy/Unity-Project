@@ -38,6 +38,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void CheckForLifeIncrease()
+    {
+        if (coinsCollected >= 10)
+        {
+            lives++;
+            coinsCollected -= 10; // Reset coins after increasing life
+            Debug.Log("Lives increased! Current lives: " + lives);
+        }
+    }
+
      public void TakeDamage(int damage)
     {
         if (this.isImmune == false)
