@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     public float immunityDuration = 1.5f;
    
     public int coinsCollected = 0;
+    public int coinsNeededForLife = 10; // Number of coins needed to add a life
 
     // public AudioClip GameOverSound;
 
@@ -38,6 +39,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void CheckForLifeIncrease()
+    {
+        if (coinsCollected >= coinsNeededForLife)
+        {
+            lives++;
+            coinsCollected -= coinsNeededForLife; // Reset coins after increasing life
+            Debug.Log("Lives increased! Current lives: " + lives);
+        }
+    }
+
      public void TakeDamage(int damage)
     {
         if (this.isImmune == false)
@@ -46,7 +57,7 @@ public class PlayerStats : MonoBehaviour
             if (this.health < 0) this.health = 0;
             if (this.lives > 0 && this.health == 0)
             {
-                FindObjectOfType<LevelManager>().RespawnPlayer();
+                FindObjectOfType<LevelManager>().RespawnPlayer(this.gameObject);
                 this.health = 100;
                 this.lives--;
             }
