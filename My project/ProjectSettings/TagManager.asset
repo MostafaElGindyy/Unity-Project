@@ -9,6 +9,7 @@ TagManager:
   - Spike
   - Wall
   - Ladder
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

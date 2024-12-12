@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") // Ensure the player GameObject has the tag "Player"
+        if (other.CompareTag("Player")) // Use CompareTag for better performance
         {
-            FindObjectOfType<LevelManager>().CurrentCheckpoint = this.gameObject;
-            Debug.Log("Checkpoint set"); // Debug log for setting checkpoint
+            LevelManager levelManager = FindObjectOfType<LevelManager>();
+            levelManager.SetCheckpoint(transform.position); // Set the checkpoint position
+            Destroy(gameObject, 0.2f); // Destroy the checkpoint after a short delay
         }
     }
 }
