@@ -12,19 +12,20 @@ TagManager:
   - Checkpoint
   - Coin
   - Barrel
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - lll
+  - Enemy
   - Water
   - UI
-  - Background
+  - Bullet
   - Player
   - Ground
   - Object
   - Checkpoint
-  - Enemy
+  - Background
   - Coin
   - 
   - 
@@ -58,6 +59,12 @@ TagManager:
   - name: Player
     uniqueID: 3243672575
     locked: 0
+  - name: Enemy
+    uniqueID: 4090205611
+    locked: 0
+  - name: Bullet
+    uniqueID: 4161775575
+    locked: 0
   - name: foreground
     uniqueID: 3978023157
     locked: 0
@@ -66,9 +73,6 @@ TagManager:
     locked: 0
   - name: Checkpoint
     uniqueID: 3656503137
-    locked: 0
-  - name: Enemy
-    uniqueID: 4090205611
     locked: 0
   - name: Coin
     uniqueID: 1203294397
