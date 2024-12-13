@@ -49,5 +49,14 @@ public class BulletController : MonoBehaviour
             }
             Destroy(this.gameObject); // Destroy the bullet after hitting the enemy
         }
+
+        else if (other.tag == "Ground")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (other.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

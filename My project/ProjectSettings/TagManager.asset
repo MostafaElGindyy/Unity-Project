@@ -13,6 +13,7 @@ TagManager:
   - Coin
   - Barrel
   - Bullet
+  - Ground
   layers:
   - Default
   - TransparentFX
