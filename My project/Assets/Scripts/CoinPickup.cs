@@ -22,7 +22,6 @@ public class CoinPickup : MonoBehaviour
         {
             var playerStats = FindObjectOfType<PlayerStats>();
             playerStats.coinsCollected += coinValue;
-            Debug.Log("Current coins collected: " + playerStats.coinsCollected); // Debug current coins
             playerStats.CheckForLifeIncrease(); // Check for life increase when coins are collected
             Destroy(this.gameObject);
         }

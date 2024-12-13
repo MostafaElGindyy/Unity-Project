@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -18,6 +20,10 @@ public class PlayerStats : MonoBehaviour
    
     public int coinsCollected = 0;
     public int coinsNeededForLife = 10; // Number of coins needed to add a life
+
+    public Image healthBar;
+    public TextMeshProUGUI ScoreUI;
+    public TextMeshProUGUI LivesUI;
 
     // public AudioClip GameOverSound;
 
@@ -45,32 +51,31 @@ public class PlayerStats : MonoBehaviour
         {
             lives++;
             coinsCollected -= coinsNeededForLife; // Reset coins after increasing life
-            Debug.Log("Lives increased! Current lives: " + lives);
         }
     }
 
      public void TakeDamage(int damage)
+{
+    if (this.isImmune == false)
     {
-        if (this.isImmune == false)
+        this.health -= damage;
+        healthBar.fillAmount = this.health / 100f; // Update the health bar
+
+        if (this.health < 0) this.health = 0;
+
+        if (this.lives > 0 && this.health == 0)
         {
-            this.health -= damage;
-            if (this.health < 0) this.health = 0;
-            if (this.lives > 0 && this.health == 0)
-            {
-                FindObjectOfType<LevelManager>().RespawnPlayer(this.gameObject);
-                this.health = 100;
-                this.lives--;
-            }
-            else if (this.lives == 0 && this.health == 0)
-            {
-               // AudioManager.instance.PlaySingle(GameOverSound);
-                // AudioManager.instance.musicSource.Stop();
-                Debug.Log("Gameover");
-                Destroy(this.gameObject);
-            }
-            Debug.Log("Player Health:" + this.health.ToString());
-            Debug.Log("Player Lives:" + this.lives.ToString());
+            FindObjectOfType<LevelManager>().RespawnPlayer(this.gameObject);
+            this.health = 100; // Reset health
+            healthBar.fillAmount = 1f; // Reset the health bar to full
+            this.lives--;
         }
+        else if (this.lives == 0 && this.health == 0)
+        {
+            Debug.Log("Gameover");
+            Destroy(this.gameObject);
+        }
+    }
         PlayHitReaction();
     }
 
@@ -90,9 +95,11 @@ public class PlayerStats : MonoBehaviour
             {
                 this.isImmune = false;
                 this.spriteRenderer.enabled = true;
-                // Debug.Log("Immunity has ended");
             }
         }
+        ScoreUI.text = "" + coinsCollected;
+        LivesUI.text = "" + lives;
+
     }
 
     public void collectcoins(int coinvalue)
