@@ -17,7 +17,7 @@ public class NavigationController : MonoBehaviour
 
     public void GoToGameOverScene()
     {
-        Application.LoadLevel(2);
+        Application.LoadLevel(5);
     }
 
     public void GoToVictoryScene()
