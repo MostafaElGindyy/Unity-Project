@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public float speed;
-    public float timeremaining;
+    public float speed; // Speed of the bullet
+    public float timeremaining; // Lifespan of the bullet
+    public int damage; // Damage the bullet inflicts
 
-    // Start is called before the first frame update
     void Start()
     {
         Player player;
         player = FindObjectOfType<Player>();
 
+        // Flip bullet direction based on player's scale
         if (player.transform.localScale.x < 0)
         {
             speed = -speed;
@@ -20,11 +21,12 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Move the bullet
         GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
 
+        // Destroy bullet after its lifetime ends
         if (timeremaining > 0)
         {
             timeremaining -= Time.deltaTime;
@@ -39,7 +41,21 @@ public class BulletController : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            // Try to get the EnemyController script and apply damage
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(this.gameObject); // Destroy the bullet after hitting the enemy
+        }
+
+        else if (other.tag == "Ground")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (other.tag == "Wall")
+        {
             Destroy(this.gameObject);
         }
     }
