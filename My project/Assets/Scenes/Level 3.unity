@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.12, y: 160}
+  m_AnchoredPosition: {x: -236.12, y: 133.9}
   m_SizeDelta: {x: 99.441, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22149883
@@ -2309,7 +2309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.2, y: 98}
+  m_AnchoredPosition: {x: -101.2, y: 72.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001078797
@@ -3166,7 +3166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.88931, y: 155}
+  m_AnchoredPosition: {x: -236.88931, y: 128.9}
   m_SizeDelta: {x: 97.9029, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213258637
@@ -5191,9 +5191,9 @@ GameObject:
   - component: {fileID: 1711827953}
   - component: {fileID: 1711827952}
   - component: {fileID: 1711827954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: intbuilding7a_93
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5981,7 +5981,7 @@ GameObject:
   - component: {fileID: 2067501771}
   m_Layer: 9
   m_Name: Red Oil Barrel
-  m_TagString: Barrel
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6251,7 +6251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85, y: 123}
+  m_AnchoredPosition: {x: -85, y: 97.600006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140743188
