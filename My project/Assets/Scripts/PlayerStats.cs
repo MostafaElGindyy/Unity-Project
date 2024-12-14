@@ -106,5 +106,5 @@ public class PlayerStats : MonoBehaviour
     public void collectcoins(int coinvalue)
     {
         this.coinsCollected = this.coinsCollected + coinvalue;
-    }
+    }
 }
