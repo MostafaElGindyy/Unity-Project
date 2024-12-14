@@ -71,7 +71,8 @@ public class PlayerStats : MonoBehaviour
             this.lives--;
         }
         else if (this.lives == 0 && this.health == 0)
-        {
+            {
+                (new NavigationController()).GoToGameOverScene();
             Debug.Log("Gameover");
             Destroy(this.gameObject);
         }
@@ -105,5 +106,5 @@ public class PlayerStats : MonoBehaviour
     public void collectcoins(int coinvalue)
     {
         this.coinsCollected = this.coinsCollected + coinvalue;
-    }
+    }
 }
