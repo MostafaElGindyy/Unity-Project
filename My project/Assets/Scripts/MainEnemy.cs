@@ -1,94 +1,73 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainEnemy : MonoBehaviour
 {
-    private Animator animator; // Reference to the Animator component
-    private EnemyController enemyController; // Reference to the EnemyController script
-    private Rigidbody2D rb; // Reference to Rigidbody2D
-    private bool isAttacking = false; // Prevents multiple attacks during overlap
+    public Animator animator;
+    private bool isAttacking = false;
+    private EnemyController enemyController;
+    private float previousSpeed;
 
     void Start()
     {
-        // Get references to the Animator, EnemyController, and Rigidbody2D components
         animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Animator component is missing from Main Enemy!");
-        }
-
         enemyController = GetComponent<EnemyController>();
-        if (enemyController == null)
-        {
-            Debug.LogError("EnemyController script is missing from Main Enemy!");
-        }
-
-        rb = GetComponent<Rigidbody2D>();
-        if (rb == null)
-        {
-            Debug.LogError("Rigidbody2D is missing from Main Enemy!");
-        }
     }
 
     void FixedUpdate()
     {
-        // Move the enemy only if it's not attacking
         if (!isAttacking)
         {
-            if (enemyController.isFacingright)
-            {
-                rb.velocity = new Vector2(enemyController.maxSpeed, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector2(-enemyController.maxSpeed, rb.velocity.y);
-            }
+            Walk();
+        }
+    }
+
+    void Walk()
+    {
+        if (enemyController.isFacingright)
+        {
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(enemyController.maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
         else
         {
-            // Stop movement while attacking
-            rb.velocity = Vector2.zero;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemyController.maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Handle collisions with walls, enemies, spikes, and objects
-        if (collider.tag == "Wall" || collider.tag == "Enemy" || collider.tag == "Spike" || collider.tag == "Object")
+        if (collider.CompareTag("Wall") || collider.CompareTag("Enemy") || collider.CompareTag("Spike") || collider.CompareTag("Object"))
         {
-            if (!isAttacking) // Flip only when not attacking
-            {
-                enemyController.Flip();
-            }
+            Flip();
         }
 
-        // Handle collision with the player
-        if (collider.tag == "Player" && !isAttacking)
+        if (collider.CompareTag("Player") && !isAttacking)
         {
-            // Mark the enemy as attacking to stop movement
+            collider.GetComponent<PlayerStats>().TakeDamage(enemyController.damage);
             isAttacking = true;
-
-            // Play the Attack animation
-            animator.Play("Attack", 0, 0f);
-
-            // Start the delayed damage coroutine
-            StartCoroutine(DelayedDamage());
+            animator.SetTrigger("Attack");
+            animator.SetBool("IsRunning", false);
+            previousSpeed = enemyController.maxSpeed;
+            enemyController.maxSpeed = 0;
+            StartCoroutine(WaitForAttackAnimation());
         }
     }
 
-    IEnumerator DelayedDamage()
+    void Flip()
     {
-        // Wait for 1 second (or any desired delay)
-        yield return new WaitForSeconds(1f);
+        enemyController.Flip();
+    }
 
-        // Apply damage to the player
-        FindObjectOfType<PlayerStats>().TakeDamage(enemyController.damage);
-
-        // Return to idle after the attack animation finishes
-        animator.SetTrigger("Idle");
-
-        // Allow walking again
+    private IEnumerator WaitForAttackAnimation()
+    {
+        float attackAnimationDuration = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(attackAnimationDuration);
+        
+        animator.SetBool("IsRunning", true);
         isAttacking = false;
+        
+        enemyController.maxSpeed = previousSpeed;
+        
+        Walk();
     }
 }
