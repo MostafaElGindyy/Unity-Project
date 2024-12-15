@@ -37,7 +37,7 @@ public class Dialogue : MonoBehaviour
     {
         continueButton.SetActive(false);
 
-        if (index < dialogueSentences.Length - 1) // Corrected from "indexer"
+        if (index < dialogueSentences.Length - 1)
         {
             index++;
             textDisplay.text = "";
@@ -45,7 +45,6 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            // End of dialogue
             textDisplay.text = "";
             continueButton.SetActive(false);
             dialogueBox.SetActive(false);
