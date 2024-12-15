@@ -4,14 +4,16 @@ using UnityEngine;
 public class MainEnemy : MonoBehaviour
 {
     public Animator animator;
+    public bool isFacingRight = false;
+    public float maxSpeed = 2;
+    public int damage = 6;
+    public int health = 100;
     private bool isAttacking = false;
-    private EnemyController enemyController;
     private float previousSpeed;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        enemyController = GetComponent<EnemyController>();
     }
 
     void FixedUpdate()
@@ -24,13 +26,14 @@ public class MainEnemy : MonoBehaviour
 
     void Walk()
     {
-        if (enemyController.isFacingright)
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (isFacingRight)
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(enemyController.maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
         }
         else
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemyController.maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
         }
     }
 
@@ -43,31 +46,44 @@ public class MainEnemy : MonoBehaviour
 
         if (collider.CompareTag("Player") && !isAttacking)
         {
-            collider.GetComponent<PlayerStats>().TakeDamage(enemyController.damage);
+            PlayerStats player = collider.GetComponent<PlayerStats>();
+            if (player != null)
+            {
+                player.TakeDamage(damage);
+            }
+
             isAttacking = true;
             animator.SetTrigger("Attack");
             animator.SetBool("IsRunning", false);
-            previousSpeed = enemyController.maxSpeed;
-            enemyController.maxSpeed = 0;
+            previousSpeed = maxSpeed;
+            maxSpeed = 0;
             StartCoroutine(WaitForAttackAnimation());
         }
     }
 
     void Flip()
     {
-        enemyController.Flip();
+        isFacingRight = !isFacingRight;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+        health -= damageTaken;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator WaitForAttackAnimation()
     {
         float attackAnimationDuration = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(attackAnimationDuration);
-        
+
         animator.SetBool("IsRunning", true);
         isAttacking = false;
-        
-        enemyController.maxSpeed = previousSpeed;
-        
+        maxSpeed = previousSpeed;
         Walk();
     }
 }
