@@ -14,10 +14,10 @@ public class LVL2Enemyscene : MonoBehaviour
             dialogueTriggered = true; // Set the flag to true
             string[] dialogue =
             {
-                "Jack: Iï¿½m sorry, Max. I just followed Rico's orders",
-                "Max: I donï¿½t care about your apology. I want to know where is my son located!",
-                "Jack: Vince planned it all. Heï¿½s the one you should be after",
-                "Jack: I know the his lab's location. But, I won't tell you unless you defeat me",
+                "Jack: I’m sorry, Max. I just followed Rico's orders",
+                "Max: I don’t care about your apology. I want to know where is my son located!",
+                "Jack: Vince planned it all. He’s the one you should be after",
+                "Jack: I know the his lab's location. But, I won't tell you unsless you defeat me",
             };
             dialogueManager.SetSentences(dialogue);
             dialogueManager.StartCoroutine(dialogueManager.TypeDialogue());
