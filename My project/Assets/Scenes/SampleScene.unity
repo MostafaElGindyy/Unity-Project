@@ -458,6 +458,7 @@ MonoBehaviour:
   continueButton: {fileID: 1071245060}
   dialogueBox: {fileID: 879640078}
   player: {fileID: 595415863}
+  enemy: {fileID: 0}
 --- !u!4 &131726221
 Transform:
   m_ObjectHideFlags: 0
@@ -2226,6 +2227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8023544262735316032, guid: 4b5b981fd6a34d243a4aa9b685a852e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5b981fd6a34d243a4aa9b685a852e3, type: 3}
 --- !u!1 &413965385
@@ -2564,7 +2569,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420034
 MonoBehaviour:
@@ -2814,7 +2819,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8023544262735316032, guid: 4b5b981fd6a34d243a4aa9b685a852e3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8023544262735316032, guid: 4b5b981fd6a34d243a4aa9b685a852e3, type: 3}
       propertyPath: m_LocalScale.x
@@ -3004,7 +3009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalScale.x
@@ -4033,6 +4038,7 @@ MonoBehaviour:
   maxSpeed: 4
   damage: 30
   health: 200
+  navigationController: {fileID: 0}
 --- !u!114 &717146635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11547,7 +11553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950788687181280089, guid: 340c3096ee19daa489eac6b5b09d77aa, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3950788687181280089, guid: 340c3096ee19daa489eac6b5b09d77aa, type: 3}
       propertyPath: m_LocalScale.x
@@ -12272,7 +12278,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 131998532347945088, guid: f2ff60e6dc2706f4ea904e7014cab807, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 131998532347945088, guid: f2ff60e6dc2706f4ea904e7014cab807, type: 3}
       propertyPath: m_LocalPosition.x
