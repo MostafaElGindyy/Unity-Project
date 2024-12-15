@@ -14,6 +14,7 @@ TagManager:
   - Barrel
   - Bullet
   - Ground
+  - Cannon
   layers:
   - Default
   - TransparentFX

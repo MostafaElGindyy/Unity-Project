@@ -53,7 +53,7 @@ public class BulletController : MonoBehaviour
         // Ensure the bullet processes collision only once
         if (hasHit) return;
 
-        if (other.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
             // Try to get the EnemyController script and apply damage
             EnemyController enemy = other.GetComponent<EnemyController>();
@@ -64,7 +64,20 @@ public class BulletController : MonoBehaviour
             hasHit = true; // Mark the bullet as having hit
             Destroy(this.gameObject); // Destroy the bullet after hitting the enemy
         }
-        else if (other.tag == "Ground" || other.tag == "Wall")
+
+        else if (other.CompareTag("Cannon")) // Check for collision with cannon
+        {
+            // Try to get the Canon script and apply damage
+            Canon canon = other.GetComponent<Canon>();
+            if (canon != null)
+            {
+                canon.TakeDamage(damage, this.gameObject); // Pass the bullet and damage
+            }
+            hasHit = true; // Mark the bullet as having hit
+            Destroy(this.gameObject); // Destroy the bullet after hitting the cannon
+        }
+
+        else if (other.CompareTag("Ground") || other.CompareTag("Wall"))
         {
             hasHit = true; // Mark the bullet as having hit
             Destroy(this.gameObject);
