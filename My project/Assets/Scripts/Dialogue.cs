@@ -7,16 +7,27 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     private string[] dialogueSentences;
-    private int index = 0; // Corrected from "interface index"
+    private int index = 0;
     public float typingSpeed;
     public GameObject continueButton;
     public GameObject dialogueBox;
+
+    // References to player and enemy Rigidbody2D components
     public Rigidbody2D player;
+    public Rigidbody2D enemy;
 
     public IEnumerator TypeDialogue()
     {
         dialogueBox.SetActive(true);
+
+        // Freeze player movement
         player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+
+        // Freeze enemy movement
+        if (enemy != null)
+        {
+            enemy.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        }
 
         foreach (char letter in dialogueSentences[index].ToCharArray())
         {
@@ -50,8 +61,17 @@ public class Dialogue : MonoBehaviour
             dialogueBox.SetActive(false);
             this.dialogueSentences = null;
             index = 0;
+
+            // Unfreeze player movement
             player.constraints = RigidbodyConstraints2D.None;
             player.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            // Unfreeze enemy movement
+            if (enemy != null)
+            {
+                enemy.constraints = RigidbodyConstraints2D.None;
+                enemy.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
         }
     }
 
