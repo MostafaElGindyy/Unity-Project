@@ -2988,6 +2988,7 @@ MonoBehaviour:
   maxSpeed: 3
   damage: 20
   health: 100
+  navigationController: {fileID: 0}
 --- !u!1 &432444816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3481,7 @@ MonoBehaviour:
   maxSpeed: 3
   damage: 20
   health: 100
+  navigationController: {fileID: 0}
 --- !u!1 &480388288
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,6 +4522,7 @@ GameObject:
   - component: {fileID: 761925750}
   - component: {fileID: 761925749}
   - component: {fileID: 761925748}
+  - component: {fileID: 761925753}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4625,6 +4628,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &761925753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761925747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ce36470e6b65542a615c33ca5e03a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &785323436
 GameObject:
   m_ObjectHideFlags: 0
@@ -8142,7 +8157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.9
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10944,6 +10959,7 @@ MonoBehaviour:
   maxSpeed: 5
   damage: 50
   health: 100
+  navigationController: {fileID: 761925753}
 --- !u!114 &1669060522
 MonoBehaviour:
   m_ObjectHideFlags: 0

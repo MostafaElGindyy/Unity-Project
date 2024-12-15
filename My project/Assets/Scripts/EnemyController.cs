@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public int damage = 6; // Damage dealt to the player
     public int health = 100; // Enemy's health
     private HashSet<GameObject> processedBullets = new HashSet<GameObject>(); // Track bullets that already inflicted damage
+    public NavigationController navigationController;
 
     public void Flip()
     {
@@ -27,19 +28,21 @@ public class EnemyController : MonoBehaviour
         // Destroy the enemy if health is less than or equal to zero
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Die(); // Call the Die method when the enemy's health reaches 0
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    private void Die()
     {
-        if (other.tag == "Player")
+        // Call GoToNextLevel method from NavigationController to load the next level
+        if (navigationController != null)
         {
-            // Apply damage to the player
-            FindObjectOfType<PlayerStats>().TakeDamage(damage);
-            // AudioManager.instance.RandomizeSfx(hitSound); // Optional sound effect
+            navigationController.GoToNextLevel();
         }
+
+        Destroy(this.gameObject); // Destroy the enemy GameObject
     }
+
 
     void Start()
     {
