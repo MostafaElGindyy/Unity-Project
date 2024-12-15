@@ -17,7 +17,7 @@ public class NavigationController : MonoBehaviour
 
     public void GoToGameOverScene()
     {
-        SceneManager.LoadScene(5); // Load GameOver scene by index (5)
+        SceneManager.LoadScene(6); // Load GameOver scene by index (5)
     }
 
     public void GoToVictoryScene()
