@@ -8157,11 +8157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.2
+      value: -31.11
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8195,6 +8195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7490081634843757736, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
+      propertyPath: dialogueScript
+      value: 
+      objectReference: {fileID: 1881717283}
     - target: {fileID: 7490081634843757738, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12056,6 +12060,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 395186398}
   player: {fileID: 1788530831}
   enemy: {fileID: 1669060525}
+  isDialogueActive: 0
 --- !u!4 &1881717284
 Transform:
   m_ObjectHideFlags: 0
