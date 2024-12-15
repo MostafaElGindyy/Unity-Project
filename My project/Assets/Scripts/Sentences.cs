@@ -14,8 +14,7 @@ public class Sentences : MonoBehaviour
             dialogueTriggered = true; // Set the flag to true
             string[] dialogue =
             {
-                "Player: Hello",
-                "Flower: Hi!"
+                "Dropping in the acid would kill you immediatly, try to avoid the acid!",
             };
             dialogueManager.SetSentences(dialogue);
             dialogueManager.StartCoroutine(dialogueManager.TypeDialogue());
