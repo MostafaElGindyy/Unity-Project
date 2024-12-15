@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public float maxSpeed = 2;
     public int damage = 6; // Damage dealt to the player
     public int health = 100; // Enemy's health
-    // public AudioClip hitSound;
+    private HashSet<GameObject> processedBullets = new HashSet<GameObject>(); // Track bullets that already inflicted damage
 
     public void Flip()
     {
@@ -16,8 +16,11 @@ public class EnemyController : MonoBehaviour
         transform.localScale = new Vector3(-(transform.localScale.x), transform.localScale.y, transform.localScale.z);
     }
 
-    public void TakeDamage(int damageTaken)
+    public void TakeDamage(int damageTaken, GameObject bullet)
     {
+        if (processedBullets.Contains(bullet)) return; // Skip if damage from this bullet was already processed
+        processedBullets.Add(bullet);
+
         health -= damageTaken; // Reduce health by the incoming damage
         Debug.Log("Enemy took damage: " + damageTaken + ", Remaining health: " + health);
 

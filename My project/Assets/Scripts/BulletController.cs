@@ -7,6 +7,9 @@ public class BulletController : MonoBehaviour
     public float speed; // Speed of the bullet
     public float timeremaining; // Lifespan of the bullet
     public int damage; // Damage the bullet inflicts
+    public static float cooldown = 0.5f; // Cooldown time between bullets, adjustable
+    private static float lastShotTime = -0.5f; // Tracks the last shot time
+    private bool hasHit; // Tracks whether the bullet has already hit something
 
     void Start()
     {
@@ -19,6 +22,14 @@ public class BulletController : MonoBehaviour
             speed = -speed;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
+
+        // Enforce cooldown on bullet instantiation
+        if (Time.time - lastShotTime < cooldown)
+        {
+            Destroy(this.gameObject); // Destroy the bullet if it's fired before cooldown ends
+            return;
+        }
+        lastShotTime = Time.time;
     }
 
     void Update()
@@ -39,23 +50,23 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Ensure the bullet processes collision only once
+        if (hasHit) return;
+
         if (other.tag == "Enemy")
         {
             // Try to get the EnemyController script and apply damage
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, this.gameObject);
             }
+            hasHit = true; // Mark the bullet as having hit
             Destroy(this.gameObject); // Destroy the bullet after hitting the enemy
         }
-
-        else if (other.tag == "Ground")
+        else if (other.tag == "Ground" || other.tag == "Wall")
         {
-            Destroy(this.gameObject);
-        }
-        else if (other.tag == "Wall")
-        {
+            hasHit = true; // Mark the bullet as having hit
             Destroy(this.gameObject);
         }
     }

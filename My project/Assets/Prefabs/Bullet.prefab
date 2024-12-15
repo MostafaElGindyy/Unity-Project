@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  timeremaining: 3
+  timeremaining: 2.5
   damage: 20
 --- !u!61 &6404495630644812388
 BoxCollider2D:

@@ -2766,8 +2766,9 @@ GameObject:
   - component: {fileID: 953351464}
   - component: {fileID: 953351463}
   - component: {fileID: 953351462}
-  - component: {fileID: 953351468}
   - component: {fileID: 953351470}
+  - component: {fileID: 953351471}
+  - component: {fileID: 953351472}
   m_Layer: 3
   m_Name: Main Enemy
   m_TagString: Enemy
@@ -2907,31 +2908,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953351461}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.97, y: -5.78, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.117094, y: -1.8822186, z: 0.13401787}
   m_LocalScale: {x: 7.7622895, y: 7.4965677, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1891147141}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &953351468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953351461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3208f20f12bdbcf459471479cb135e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 953351470}
-  isFacingRight: 0
-  maxSpeed: 5
-  damage: 50
-  health: 300
 --- !u!95 &953351470
 Animator:
   serializedVersion: 4
@@ -2952,6 +2936,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &953351471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953351461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3208f20f12bdbcf459471479cb135e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 953351470}
+--- !u!114 &953351472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953351461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115b1d1925a85544497c762d1f7000fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingright: 0
+  maxSpeed: 5
+  damage: 50
+  health: 100
 --- !u!1001 &995509745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5545,7 +5558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1891147141}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1553631129
 Animator:
@@ -6622,6 +6635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 953351466}
   - {fileID: 1094057702}
   - {fileID: 1553631128}
   m_Father: {fileID: 0}
@@ -7469,7 +7483,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 641285182279521603, guid: c58dad1ed56bc7e428b60b6b945dee74, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641285182279521603, guid: c58dad1ed56bc7e428b60b6b945dee74, type: 3}
       propertyPath: m_LocalPosition.x
