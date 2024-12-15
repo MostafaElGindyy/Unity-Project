@@ -35,5 +35,10 @@ public class Cannon_Bullet : MonoBehaviour
             // Destroy the bullet after hitting the player
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Ground"))
+        {
+                Destroy(gameObject);
+
+        }
     }
 }
