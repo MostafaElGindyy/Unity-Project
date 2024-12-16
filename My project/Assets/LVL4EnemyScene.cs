@@ -17,7 +17,7 @@ public class LVL4EnemyScene : MonoBehaviour
                 "After several brutal fights, finally Rico appears.",
             "Rico : “You were always too soft, Max.”",
             "Max does not respond and gets ready to fight his last fight",
-            "Overwhelmed with all the enemies he faced, Max gathers all his strength",
+          
 
     };
             dialogueManager.SetSentences(dialogue);
