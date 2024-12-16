@@ -14,7 +14,7 @@ public class gameStartHint: MonoBehaviour
             dialogueTriggered = true; // Set the flag to true
             string[] dialogue =
             {
-                "collect 10 coins to get an extra life"
+                "In each level, you'll find 10 coins, collect the 10 coins to get an extra life."
             };
             dialogueManager.SetSentences(dialogue);
             dialogueManager.StartCoroutine(dialogueManager.TypeDialogue());
