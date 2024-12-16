@@ -16,6 +16,9 @@ public class Dialogue : MonoBehaviour
     public Rigidbody2D player;
     public Rigidbody2D enemy;
 
+    // Track if dialogue is active
+    public bool isDialogueActive = false;
+
     public IEnumerator TypeDialogue()
     {
         dialogueBox.SetActive(true);
@@ -28,6 +31,8 @@ public class Dialogue : MonoBehaviour
         {
             enemy.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         }
+
+        isDialogueActive = true;  // Set to true when dialogue is active
 
         foreach (char letter in dialogueSentences[index].ToCharArray())
         {
@@ -72,6 +77,8 @@ public class Dialogue : MonoBehaviour
                 enemy.constraints = RigidbodyConstraints2D.None;
                 enemy.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
+
+            isDialogueActive = false;  // Set to false when dialogue ends
         }
     }
 

@@ -23,7 +23,11 @@ public class Player : MonoBehaviour
 
     private bool isShooting = false;
 
-    void Start() {
+    // Reference to the Dialogue script to check if dialogue is active
+    public Dialogue dialogueScript;  // Ensure this is assigned in the Inspector
+
+    void Start()
+    {
         anim = GetComponent<Animator>();
     }
 
@@ -32,7 +36,14 @@ public class Player : MonoBehaviour
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 
-    void Update() {
+    void Update()
+    {
+        // Prevent movement and shooting if dialogue is active
+        if (dialogueScript != null && dialogueScript.isDialogueActive)
+        {
+            return;  // If dialogue is active, skip the rest of the Update logic (prevent movement and shooting)
+        }
+
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         anim.SetBool("Grounded", grounded);
 
@@ -91,3 +102,4 @@ public class Player : MonoBehaviour
         isShooting = false;
     }
 }
+
