@@ -1618,8 +1618,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -316944139
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1399913342, guid: 3a6a65754404d9f4ba89d060f71b615e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2162,8 +2162,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -316944139
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1399913342, guid: 3a6a65754404d9f4ba89d060f71b615e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4362,7 +4362,7 @@ MonoBehaviour:
   isFacingright: 0
   maxSpeed: 5
   damage: 50
-  health: 300
+  health: 350
   navigationController: {fileID: 1982952166}
 --- !u!1001 &995509745
 PrefabInstance:
@@ -4637,7 +4637,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.668493
+  orthographic size: 10.788608
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
