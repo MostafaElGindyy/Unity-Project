@@ -5012,7 +5012,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -21.66515, y: 0.6627846}
+  m_Offset: {x: -21.66515, y: -14.731264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5023,7 +5023,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08810425, y: 20.220749}
+  m_Size: {x: 0.08810425, y: 51.00884}
   m_EdgeRadius: 0
 --- !u!114 &851031603
 MonoBehaviour:
@@ -5970,11 +5970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 431876, guid: 86665e566268cb5469dbb3747ca2839d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 26.29
       objectReference: {fileID: 0}
     - target: {fileID: 431876, guid: 86665e566268cb5469dbb3747ca2839d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 431876, guid: 86665e566268cb5469dbb3747ca2839d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8270,7 +8270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3
+      value: -31.44
       objectReference: {fileID: 0}
     - target: {fileID: 7490081634843757732, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8308,6 +8308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7490081634843757736, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
+      propertyPath: dialogueScript
+      value: 
+      objectReference: {fileID: 1881717283}
     - target: {fileID: 7490081634843757738, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12056,6 +12060,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 395186398}
   player: {fileID: 1788530831}
   enemy: {fileID: 937155234}
+  isDialogueActive: 0
 --- !u!4 &1881717284
 Transform:
   m_ObjectHideFlags: 0
