@@ -8070,6 +8070,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1169536107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169536110}
+  - component: {fileID: 1169536109}
+  - component: {fileID: 1169536108}
+  m_Layer: 0
+  m_Name: Enemy dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1169536108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169536107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40ca0d400c9ede4c9f7f9edb8673b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 2069353708}
+--- !u!61 &1169536109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169536107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 6.2371817, y: 6.0113773}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6049366, y: 7.152489}
+  m_EdgeRadius: 0
+--- !u!4 &1169536110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169536107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.9830785, y: 4.628408, z: -10.483713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 96
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1183334436
 GameObject:
   m_ObjectHideFlags: 0
@@ -10493,6 +10565,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810560402}
   m_CullTransparentMesh: 1
+--- !u!50 &1832347154 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7490081634843757737, guid: 62a3bda496be4b24da87b57eb2722900, type: 3}
+  m_PrefabInstance: {fileID: 123711542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1835910317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11667,7 +11744,7 @@ MonoBehaviour:
   typingSpeed: 0.02
   continueButton: {fileID: 1629194819}
   dialogueBox: {fileID: 368632415}
-  player: {fileID: 0}
+  player: {fileID: 1832347154}
   enemy: {fileID: 51797028}
   isDialogueActive: 0
 --- !u!4 &2069353709
